@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "PsybotCollector",
+    "version": "1.0",
+    "browser_action": {
+      "default_popup": "index.html",
+      "default_icon": "Psybot.png"
+    },
+    "permissions": [
+        "storage",
+        "tabs",
+        "webNavigation",
+        "<all_urls>", 
+        "*://*/*", 
+        "http://localhost:8000/*"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+        {
+          "matches": [
+            "<all_urls>", 
+            "*://*/*", 
+            "http://localhost:8000/*"
+          ],
+          "js": ["content.js"],
+          "run_at": "document_end"
+        }
+      ]
+  }
+  
