@@ -1,4 +1,4 @@
-let userName= "Ayhem";
+let userName= "Kimo";
 let startTime;
 let timeSpent = 0;
 
